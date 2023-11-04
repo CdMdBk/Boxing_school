@@ -1,0 +1,38 @@
+:root {
+    --main-color: #243C4D;
+    --accent-color: #E32525;
+    --transition: .3s;
+}
+
+html {
+    font-size: 16px;
+}
+
+* {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 5000px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+::selection {
+
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}

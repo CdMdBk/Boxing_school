@@ -1,0 +1,50 @@
+.header {
+    position: relative;
+    top: 80px;
+    z-index: 10;
+
+    background: url('../../images/landing/header/bg.png') no-repeat center / cover;
+}
+
+.header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: calc(100vh - 80px);
+}
+
+.header_heading,
+.header_font {
+    margin-bottom: 30px;
+
+    font-family: 'Russo One', sans-serif;
+    color: #fff;
+}
+
+.header_heading {
+    font-size: 2.7rem;
+}
+
+.header_font {
+    font-size: 2.2rem;
+}
+
+.header__button {
+}
+
+.header__button_style {
+    padding: 16px 32px;
+
+    font-family: 'Russo One', sans-serif;
+    color: #fff;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.header__button_style:hover {
+    padding: 20px 40px;
+
+    color: var(--accent-color);
+    background-color: #fff;
+}

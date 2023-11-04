@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Russo One';
+    src: local('Russo One Regular'), local('Russo-One-Regular'),
+    url('../../fonts/russo_one-regular/RussoOne-Regular.woff2') format('woff2'),
+    url('../../fonts/russo_one-regular/RussoOne-Regular.woff') format('woff'),
+    url('../../fonts/russo_one-regular/RussoOne-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sarala';
+    src: local('Sarala Regular'), local('Sarala-Regular'),
+    url('../../fonts/sarala-regular/Sarala-Regular.woff2') format('woff2'),
+    url('../../fonts/sarala-regular/Sarala-Regular.woff') format('woff'),
+    url('../../fonts/sarala-regular/Sarala-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sarala';
+    src: local('Sarala Bold'), local('Sarala-Bold'),
+    url('../../fonts/sarala-bold/Sarala-Bold.woff2') format('woff2'),
+    url('../../fonts/sarala-bold/Sarala-Bold.woff') format('woff'),
+    url('../../fonts/sarala-bold/Sarala-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

@@ -1,0 +1,146 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    height: 80px;
+    width: 100%;
+
+    background-color: var(--main-color);
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0 20px;
+}
+
+.nav__burger {
+    display: none;
+}
+
+.nav__ul {
+    display: flex;
+    justify-content: space-between;
+
+    width: 60%;
+
+    list-style-type: none;
+}
+
+.nav__li_font {
+    color: #fff;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.nav__li_font:hover {
+    color: var(--accent-color);
+}
+
+.nav__li_font_active {
+    padding-bottom: 10px;
+
+    border-bottom: 2px solid #fff;
+}
+
+@media (max-width: 992px) {
+    .nav__ul {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav__logo {
+        position: relative;
+        z-index: 30;
+
+        width: 50%;
+    }
+
+    .nav__burger {
+        position: relative;
+        z-index: 30;
+
+        display: block;
+
+        width: 60px;
+        height: 20px;
+
+        cursor: pointer;
+    }
+
+    .nav__burger > span,
+    .nav__burger::before,
+    .nav__burger::after {
+        position: absolute;
+        right: 0;
+
+        width: 100%;
+        height: 4px;
+
+        background-color: var(--accent-color);
+    }
+
+    .nav__burger::before,
+    .nav__burger::after {
+        content: '';
+    }
+
+    .nav__burger > span {
+        top: calc(100% / 2);
+
+        transform: translate(0, -50%);
+    }
+
+    .nav__burger::before {
+        top: 0;
+    }
+
+    .nav__burger::after {
+        top: calc(100%);
+
+        transform: translate(0, -100%);
+    }
+
+    .nav__ul {
+        position: absolute;
+        top: -100vh;
+        left: 100%;
+        z-index: 20;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 100%;
+        height: 100vh;
+
+        background-color: var(--main-color);
+        transition: var(--transition);
+    }
+
+    .nav__ul_active {
+        top: 80px;
+        left: 0;
+    }
+
+    .nav__li_font {
+        font-size: 2rem;
+    }
+
+    .nav__li:not(:last-child) {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav__ul {
+        align-items: flex-start;
+        padding: 0 30px;
+    }
+}

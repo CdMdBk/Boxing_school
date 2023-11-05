@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="../scripts/common/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="../styles/common/bootstrap.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/common/fonts.css">
     <link rel="stylesheet" href="../styles/common/initial-styles.css">
     <link rel="stylesheet" href="../styles/common/preloader.css">
@@ -45,19 +45,19 @@
                 <div class="col-md-6 nav__burger"><span></span></div>
                 <ul class="col-8 col-md-12 nav__ul">
                     <li class="nav__li">
-                        <a class="nav__li_font" href="#about-us">О нас</a>
-                    </li>
-                    <li class="nav__li">
                         <a class="nav__li_font" href="#our-services">Услуги</a>
                     </li>
                     <li class="nav__li">
-                        <a class="nav__li_font" href="#">Прайс</a>
+                        <a class="nav__li_font" href="#coaches">Тренеры</a>
                     </li>
                     <li class="nav__li">
-                        <a class="nav__li_font" href="#">Расписание</a>
+                        <a class="nav__li_font" href="#training">Записаться</a>
                     </li>
                     <li class="nav__li">
-                        <a class="nav__li_font" href="#">Контакты</a>
+                        <a class="nav__li_font" href="#photo">Фотоальбом</a>
+                    </li>
+                    <li class="nav__li">
+                        <a class="nav__li_font" href="#footer">Контакты</a>
                     </li>
                     <li class="nav__li">
                         <a class="nav__li_font" href="account.html">Личный кабинет</a>
@@ -75,15 +75,15 @@
                 <p class="col-12 header_font">Перчатки в подарок<br>на первой тренировке</p>
 
                 <div class="col-12">
-                    <button class="header_button-style" type="button">Записаться</button>
+                    <a class="header_button-style" href="#training">Записаться</a>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="container">
-            <div class="row about-us" id="about-us">
+        <section class="container" data-aos="flip-left">
+            <div class="row about-us">
                 <div class="about-us__box">
                     <img class="about-us__box_size" src="../images/landing/about-us/boxing.svg" alt="boxing">
                     <p class="about-us_font">Собственные методики</p>
@@ -102,7 +102,8 @@
                 </div>
             </div>
         </section>
-        <section class="our-services" id="our-services">
+
+        <section class="our-services" id="our-services" data-aos="flip-left">
             <div class="container">
                 <div class="row our-services__container">
                     <h2 class="col-12 heading heading_font">Наши услуги</h2>
@@ -120,7 +121,7 @@
                             <p>Абонимент на 15 посещений</p>
                             <p>11000 руб.</p>
                         </div>
-                        <button class="service__button service__button_style">Записаться</button>
+                        <a class="service__button service__button_style" href="#training">Записаться</a>
                     </div>
                     <div class="service">
                         <h3 class="service_heading">Групповые тренировки</h3>
@@ -136,13 +137,13 @@
                             <p>Абонимент на 15 посещений</p>
                             <p>11000 руб.</p>
                         </div>
-                            <a class="service__button service__button_style" href="#">Записаться</a>
+                            <a class="service__button service__button_style" href="#training">Записаться</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="container coaches">
+        <section class="container coaches" id="coaches" data-aos="flip-left">
             <h2 class="col-12 heading heading_font">Наши тренеры</h2>
 
             <div class="row slider">
@@ -180,18 +181,127 @@
                 </div>
             </div>
         </section>
-        <section>
 
+        <section class="training" id="training" data-aos="flip-left">
+            <div class="container">
+                <form class="row training__container" method="POST" action="log.html">
+                    <h4 class="col-12 training_heading">Запись на тренировку</h4>
+
+                    <fieldset class="training__select">
+                        <select class="col-12 training__select_style" name="type">
+                            <option value="" disabled>Вид тренировки</option>
+                            <option value="individual">Индивидуальная</option>
+                            <option value="group">Групповая</option>
+                        </select>
+                        <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+                    </fieldset>
+
+                    <fieldset class="training__select">
+                        <select class="col-12 training__select_style" name="name">
+                            <option value="" disabled>ФИО тренера</option>
+                            <option value="rodionov">Родионов Дмитрий</option>
+                            <option value="dashkova">Дашкова Елизавета</option>
+                            <option value="dmitriev">Дмитриев Родион</option>
+                        </select>
+                        <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+                    </fieldset>
+
+                    <fieldset class="training__select">
+                        <select class="col-12 training__select_style" name="">
+                            <option value="time" disabled>Время тренировки</option>
+                            <option value="9">9:00</option>
+                            <option value="14">14:00</option>
+                            <option value="19">19:00</option>
+                        </select>
+                        <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+                    </fieldset>
+
+                    <input class="col-12 training__submit training__submit_style" type="submit" value="Записаться">
+                </form>
+            </div>
         </section>
-        <section>
 
+        <section class="container photo" id="photo" data-aos="flip-left">
+            <h2 class="col-12 heading heading_font">Фотоальбом</h2>
+            <div class="row photo__container">
+                <div class="photo__box-image">
+                    <img src="../images/landing/photo-album/photo-1.png" alt="photo">
+                </div>
+                <div class="photo__box-image">
+                    <img src="../images/landing/photo-album/photo-2.png" alt="photo">
+                </div>
+                <div class="photo__box-image">
+                    <img src="../images/landing/photo-album/photo-3.png" alt="photo">
+                </div>
+                <div class="photo__box-image">
+                    <img src="../images/landing/photo-album/photo-4.png" alt="photo">
+                </div>
+                <div class="photo__box-image">
+                    <img src="../images/landing/photo-album/photo-5.png" alt="photo">
+                </div>
+                <div class="photo__box-image">
+                    <img src="../images/landing/photo-album/photo-6.png" alt="photo">
+                </div>
+                <div class="photo__box-image">
+                    <img src="../images/landing/photo-album/photo-7.png" alt="photo">
+                </div>
+                <div class="photo__box-image">
+                    <img src="../images/landing/photo-album/photo-8.png" alt="photo">
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row footer__container">
+                <div class="col-7 col-md-12 footer__map">
+                    <img class="footer__map_size" src="../images/landing/footer/map.png" alt="map">
+                </div>
 
+                <div class="col-5 col-md-12 footer__info">
+                    <h5 class="footer__info_heading">Адрес</h5>
+                    <p class="footer__info_text">г. Москва, ул. Малая-Калужская, д.9</p>
+                    <h5 class="footer__info_heading">Контакты</h5>
+                    <ul class="footer__link-ul">
+                        <li>
+                            <a href="#">
+                                <img class="footer__link-ul_size" src="../images/landing/footer/twitter.svg" alt="twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img class="footer__link-ul_size" src="../images/landing/footer/telegram.svg" alt="telegram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img class="footer__link-ul_size" src="../images/landing/footer/mail.svg" alt="mail">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img class="footer__link-ul_size" src="../images/landing/footer/telephone.svg" alt="telephone">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img class="footer__link-ul_size" src="../images/landing/footer/facebook.svg" alt="facebook">
+                            </a>
+                        </li>
+                    </ul>
+                    <h5 class="footer__info_heading">Часы работы</h5>
+                    <p class="footer__info_text">Пн-Вс 00:00-24:00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 footer__down">
+            <h5 class="footer__down_font">Knock</h5>
+        </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <script src="../scripts/common/preloader.js"></script>
     <script src="../scripts/common/burger-class.js"></script>
     <script src="../scripts/common/burger.js"></script>

@@ -1,5 +1,6 @@
 .coaches {
-
+    padding-top: 1px;
+    margin-bottom: 80px;
 }
 
 .coaches__switches {
@@ -10,7 +11,7 @@
 }
 
 .slider {
-    margin: 0 60px 40px 60px;
+    margin: 0 60px 20px 60px;
 
     overflow: hidden;
 }
@@ -60,7 +61,7 @@
     flex-flow: wrap column;
     align-items: center;
 
-    font-family: "Russo One", sans-serif;
+    font-family: 'Russo One', sans-serif;
     font-size: 1.25rem;
 }
 
@@ -89,6 +90,8 @@
 
     width: 40px;
     height: 40px;
+
+    cursor: pointer;
 }
 
 .coaches__ellipse:not(:last-child) {
@@ -100,7 +103,7 @@
     height: 24px;
 
     border-radius: 25px;
-    background: var(--main-color);
+    background-color: var(--main-color);
 }
 
 .coaches__ellipse_mini {
@@ -112,17 +115,21 @@
     height: 18px;
 
     border-radius: 25px;
-    background: #fff;
+    background-color: #fff;
+}
+
+.coaches__ellipse_mini_active {
+    background-color: var(--main-color);
 }
 
 @media (max-width: 768px) {
     .slider {
-        margin: 0 20px 40px 20px;
+        margin: 0 20px 20px 20px;
     }
 }
 
 @media (max-width: 576px) {
     .slider {
-        margin: 0 0 40px 0;
+        margin: 0 0 20px 0;
     }
 }

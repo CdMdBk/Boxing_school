@@ -1,0 +1,105 @@
+.log {
+    width: 100vw;
+    min-height: 100vh;
+
+    background: url('../../../images/login/bg-log.png') no-repeat center / cover;
+}
+
+.log__container {
+    display: flex;
+    justify-content: flex-end;
+
+    padding-top: 100px;
+}
+
+.log__form {
+    width: 50%;
+}
+
+.log__button-box {
+    display: flex;
+}
+
+.log__button {
+    height: 60px;
+    width: 50%;
+}
+
+.log__button_style {
+    color: var(--main-color);
+    background-color: #fff;
+    font-family: 'Russo One', sans-serif;
+    border-bottom: 1px solid var(--main-color);
+    transition: var(--transition);
+}
+
+.log__button_style_active {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+.log__input-box {
+    display: flex;
+    flex-direction: column;
+
+    padding: 40px 80px 80px 80px;
+
+    background-color: #fff;
+}
+
+.log_font {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.log__input {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+
+    background-color: initial;
+    border: 2px solid var(--main-color);
+    outline: none;
+}
+
+.log__input-box > .log__input[data-last-input] {
+    margin-bottom: 40px;
+}
+
+.log__input_style {
+    line-height: 20px;
+    color: var(--main-color);
+}
+
+.log__submit {
+    height: 60px;
+}
+
+.log__submit_style {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.log__submit_style:hover {
+    background-color: #fff;
+    color: var(--accent-color);
+}
+
+@media (max-width: 992px) {
+    .log__input-box {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .log__container {
+        justify-content: center;
+    }
+
+    .log__form {
+        width: 360px;
+    }
+}

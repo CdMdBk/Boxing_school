@@ -1,63 +1,86 @@
 class Slider {
-    constructor(type, switchesClass, window, sliderLength, card) {
+    constructor(type, arraySwitchClasses, window, sliderLength, card, arrayCountVisibleCards, arrayBreakpoints) {
         this.type = type;
         switch(this.type) {
             case 'carousel':
-                this.leftArrow = document.querySelectorAll(`.${switchesClass}`)[0];
-                this.rightArrow = document.querySelectorAll(`.${switchesClass}`)[1];
+                this.leftArrow = document.querySelectorAll(`.${arraySwitchClasses}`)[0];
+                this.rightArrow = document.querySelectorAll(`.${arraySwitchClasses}`)[1];
                 break;
             case 'switch':
-                this.parentSwitch = document.querySelector(`.${switchesClass}`).parentElement;
+                this.parentSwitch = document.querySelector(`.${arraySwitchClasses[0]}`).parentElement;
                 this.switch = this.parentSwitch.innerHTML;
-                this.switchClass = switchesClass;
+                this.switchClass = arraySwitchClasses[0];
+
+                this.styleActive = arraySwitchClasses[1][0];
+                if (this.styleActive === 'parent') {
+                    this.parent = arraySwitchClasses[0];
+
+                    this.arraySwitchInactiveElement = document.querySelectorAll(`${this.parent}`);
+                    this.classActive = arraySwitchClasses[1][1];
+                } else {
+                    this.parent = arraySwitchClasses[0];
+                    this.childInactive = arraySwitchClasses[1][1];
+
+                    this.arraySwitchInactiveElement = document.querySelectorAll(`.${this.parent} > .${this.childInactive}`);
+                    this.classActive = arraySwitchClasses[1][2];
+                }
+
                 this.arraySwitches = [];
                 this.count = 0;
         }
         this.window = document.querySelector(`.${window}`);
         this.sliderLength = document.querySelector(`.${sliderLength}`);
         this.arrayCard = document.querySelectorAll(`.${card}`);
+
+        this.arrayCountVisibleCards = arrayCountVisibleCards;
+        this.arrayBreakpoints = arrayBreakpoints;
     }
 
-    changeSliderSize(arrayCountVisibleCards, arrayBreakpoints) {
+    changeSliderSize() {
         switch(this.type) {
             case 'carousel':
                 break;
             case 'switch':
                 window.addEventListener('resize', () => {
-                    this.resizing(arrayCountVisibleCards, arrayBreakpoints);
+                    this.resizing();
                 });
         }
-
     }
 
-    resizing(arrayCountVisibleCards, arrayBreakpoints) {
+    resizing() {
         switch(this.type) {
             case 'carousel':
                 break;
             case 'switch':
-                if (window.screen.width > arrayBreakpoints[0]) {
-                    this.sliderLength.style.width = `${this.arrayCard.length / arrayCountVisibleCards[0] * this.window.clientWidth}px`;
-                    if (this.count > 0) this.count = 0;
-                    this.sliderLength.style.transform = `translate(0, 0)`;
-                    this.arrayCard.forEach((card) => {
-                        card.style.width = `calc(${this.window.clientWidth / arrayCountVisibleCards[0]}px - 20px)`;
-                    });
-                    this.addSwitches(arrayCountVisibleCards[0]);
-                } else if (window.screen.width < arrayBreakpoints[0] && window.screen.width >= arrayBreakpoints[1]) {
-                    this.sliderLength.style.width = `${this.arrayCard.length / arrayCountVisibleCards[1] * this.window.clientWidth}px`;
-                    if (this.count > 1) this.count = 1;
+                if (window.screen.width > this.arrayBreakpoints[0]) {
+                    if (this.count >= Math.ceil(this.arrayCard.length / this.arrayCountVisibleCards[0])) this.count = Math.ceil(this.arrayCard.length / this.arrayCountVisibleCards[0]) - 1;
+                    this.addSwitches(this.arrayCountVisibleCards[0]);
+                    
+                    this.sliderLength.style.width = `${this.arrayCard.length / this.arrayCountVisibleCards[0] * this.window.clientWidth}px`;
                     this.sliderLength.style.transform = `translate(${-this.count * this.window.clientWidth}px, 0)`;
+                    
                     this.arrayCard.forEach((card) => {
-                        card.style.width = `calc(${this.window.clientWidth / arrayCountVisibleCards[1]}px - 30px)`;
+                        card.style.width = `calc(${this.window.clientWidth / this.arrayCountVisibleCards[0]}px - 20px)`;
                     });
-                    this.addSwitches(arrayCountVisibleCards[1]);
+                } else if (window.screen.width <= this.arrayBreakpoints[0] && window.screen.width > this.arrayBreakpoints[1]) {
+                    if (this.count >= Math.ceil(this.arrayCard.length / this.arrayCountVisibleCards[1])) this.count = Math.ceil(this.arrayCard.length / this.arrayCountVisibleCards[1]) - 1;
+                    this.addSwitches(this.arrayCountVisibleCards[1]);
+                    
+                    this.sliderLength.style.width = `${this.arrayCard.length / this.arrayCountVisibleCards[1] * this.window.clientWidth}px`;
+                    this.sliderLength.style.transform = `translate(${-this.count * this.window.clientWidth}px, 0)`;
+                    
+                    this.arrayCard.forEach((card) => {
+                        card.style.width = `calc(${this.window.clientWidth / this.arrayCountVisibleCards[1]}px - 30px)`;
+                    });
                 } else {
-                    this.sliderLength.style.width = `${this.arrayCard.length / arrayCountVisibleCards[2] * this.window.clientWidth}px`;
+                    this.addSwitches(this.arrayCountVisibleCards[2]);
+                    
+                    this.sliderLength.style.width = `${this.arrayCard.length / this.arrayCountVisibleCards[2] * this.window.clientWidth}px`;
                     this.sliderLength.style.transform = `translate(${-this.count * this.window.clientWidth}px, 0)`;
+                    
                     this.arrayCard.forEach((card) => {
-                        card.style.width = `calc(${this.window.clientWidth / arrayCountVisibleCards[2]}px - 40px)`;
+                        card.style.width = `calc(${this.window.clientWidth / this.arrayCountVisibleCards[2]}px - 40px)`;
                     });
-                    this.addSwitches(arrayCountVisibleCards[2]);
                 }
         }
     }
@@ -65,13 +88,33 @@ class Slider {
     addSwitches(countVisibleCards) {
         this.arraySwitches = [];
         this.parentSwitch.innerHTML = '';
+
         for (let iterator = 0; iterator < Math.ceil(this.arrayCard.length / countVisibleCards); iterator++) {
             this.parentSwitch.innerHTML += this.switch;
         }
         for (let iterator = 0; iterator < Math.ceil(this.arrayCard.length / countVisibleCards); iterator++) {
             this.arraySwitches.push(document.querySelectorAll(`.${this.switchClass}`)[iterator]);
         }
+
+        this.changeActiveSwitch();
         this.sliderFlip();
+    }
+
+    changeActiveSwitch() {
+        if (this.styleActive === 'parent') {
+            this.arraySwitchInactiveElement = document.querySelectorAll(`${this.parent}`);
+        } else {
+            this.arraySwitchInactiveElement = document.querySelectorAll(`.${this.parent} > .${this.childInactive}`);
+        }
+
+        this.oneActiveSwitch();
+    }
+
+    oneActiveSwitch() {
+        this.arraySwitchInactiveElement.forEach((switchInactiveElement) => {
+            switchInactiveElement.classList.remove(this.classActive);
+        });
+        this.arraySwitchInactiveElement[this.count].classList.add(this.classActive);
     }
 
     sliderFlip() {
@@ -81,40 +124,12 @@ class Slider {
             case 'switch':
                 this.arraySwitches.forEach((switchPoint, index) => {
                     switchPoint.addEventListener('click', () => {
-                        this.sliderLength.style.transform = `translate(${-index * this.window.clientWidth}px, 0)`;
                         this.count = index;
+                        this.sliderLength.style.transform = `translate(${-this.count * this.window.clientWidth}px, 0)`;
+
+                        this.oneActiveSwitch();
                     });
                 });
         }
-    }
-
-    getData() {
-        console.log('Тип:');
-        console.log(this.type);
-        switch(this.type) {
-            case 'carousel':
-                console.log('Левая стрелка:');
-                console.log(this.leftArrow);
-                console.log('Правая стрелка:');
-                console.log(this.rightArrow);
-                break;
-            case 'switch':
-                console.log('Родитель переключателей:');
-                console.log(this.parentSwitch);
-                console.log('HTML-код переключателя:')
-                console.log(this.switch);
-                console.log('Класс переключателя');
-                console.log(this.switchClass);
-                console.log('Массив переключателей:');
-                console.log(this.arraySwitches);
-                console.log('Позиция слайдера')
-                console.log(this.count);
-        }
-        console.log('Окно слайдера:');
-        console.log(this.window);
-        console.log('Блок для карточек слайдера:');
-        console.log(this.sliderLength);
-        console.log('Массив карточек слайдера:');
-        console.log(this.arrayCard);
     }
 }

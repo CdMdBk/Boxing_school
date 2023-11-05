@@ -18,10 +18,6 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    height: 5000px;
-}
-
 a {
     text-decoration: none;
     color: #fff;

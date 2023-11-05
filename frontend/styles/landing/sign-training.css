@@ -1,0 +1,101 @@
+.training {
+    padding: 80px 0;
+
+    background: url('../../images/landing/sign-training/bg.png') no-repeat center / cover;
+}
+
+.training__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 60px 40px;
+    width: 40%;
+
+    background-color: #fff;
+}
+
+.training_heading {
+    margin-bottom: 40px;
+
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.25rem;
+}
+
+.training__select {
+    position: relative;
+
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 40px;
+
+    border: 1px solid #000;
+}
+
+.training__select_style {
+    width: 100%;
+
+    line-height: 26px;
+    font-weight: 700;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.training__select_arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    height: 10px;
+
+    transform: rotate(0deg);
+    transition: var(--transition);
+
+    pointer-events: none;
+}
+
+.training__select_arrow_active {
+    transform: rotate(180deg);
+}
+
+.training__submit {
+    height: 60px;
+    width: 100%;
+}
+
+.training__submit_style {
+    color: #fff;
+    font-weight: 700;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.training__submit_style:hover {
+    color: var(--accent-color);
+    background-color: #fff;
+}
+
+@media (max-width: 992px) {
+    .training__container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .training > .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .training__container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 576px) {
+    .training__container {
+        width: 100%;
+        padding: 40px 20px;
+    }
+}

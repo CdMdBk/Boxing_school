@@ -19,6 +19,12 @@
     padding: 0 20px;
 }
 
+.nav_heading {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
 .nav__burger {
     display: none;
 }
@@ -35,6 +41,7 @@
 .nav__li_font {
     color: #fff;
     cursor: pointer;
+    background-color: initial;
     transition: var(--transition);
 }
 
@@ -43,14 +50,17 @@
 }
 
 .nav__li_font_active {
-    padding-bottom: 10px;
-
+    padding-bottom: 2px;
     border-bottom: 2px solid #fff;
 }
 
 @media (max-width: 992px) {
     .nav__ul {
         width: 70%;
+    }
+
+    .nav__ul[data-users] {
+        width: 60%;
     }
 }
 
@@ -128,6 +138,10 @@
         transition: var(--transition);
     }
 
+    .nav__ul[data-users] {
+        width: 100%;
+    }
+
     .nav__ul_active {
         top: 80px;
         left: 0;
@@ -140,6 +154,10 @@
     .nav__li:not(:last-child) {
         margin-bottom: 40px;
     }
+}
+
+.account {
+    margin-top: 80px;
 }
 
 @media (max-width: 576px) {

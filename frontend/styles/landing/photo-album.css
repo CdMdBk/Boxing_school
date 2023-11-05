@@ -1,0 +1,117 @@
+.photo {
+    padding-top: 1px;
+    margin-bottom: 80px;
+}
+
+.photo > .heading_font {
+    color: var(--main-color);
+}
+
+.photo__container {
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
+
+    height: 500px;
+    margin-bottom: 80px;
+}
+
+.photo__box-image > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.photo__box-image {
+    cursor: pointer;
+}
+
+.photo__box-image:nth-child(1) {
+    grid-row: 1 / 5;
+    grid-column: 1 / 4;
+}
+
+.photo__box-image:nth-child(2) {
+    grid-row: 1 / 5;
+    grid-column: 4 / 8;
+}
+
+.photo__box-image:nth-child(3) {
+    grid-row: 1 / 8;
+    grid-column: 8 / 10;
+}
+
+.photo__box-image:nth-child(4) {
+    grid-row: 5 / 8;
+    grid-column: 4 / 6;
+}
+
+.photo__box-image:nth-child(5) {
+    grid-row: 5 / 8;
+    grid-column: 6 / 8;
+}
+
+.photo__box-image:nth-child(6) {
+    grid-row: 5 / 13;
+    grid-column: 1 / 4;
+}
+
+.photo__box-image:nth-child(7) {
+    grid-row: 8 / 13;
+    grid-column: 4 / 7;
+}
+
+.photo__box-image:nth-child(8) {
+    grid-row: 8 / 13;
+    grid-column: 7 / 10;
+}
+
+@media (max-width: 768px) {
+    .photo__container {
+        display: grid;
+        grid-template-rows: repeat(35, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        height: 900px;
+    }
+
+    .photo__box-image:nth-child(1) {
+        grid-row: 1 / 6;
+        grid-column: 1 / 4;
+    }
+
+    .photo__box-image:nth-child(2) {
+        grid-row: 1 / 6;
+        grid-column: 4 / 7;
+    }
+
+    .photo__box-image:nth-child(3) {
+        grid-row: 6 / 16;
+        grid-column: 1 / 4;
+    }
+
+    .photo__box-image:nth-child(4) {
+        grid-row: 6 / 14;
+        grid-column: 4 / 7;
+    }
+
+    .photo__box-image:nth-child(5) {
+        grid-row: 16 / 24;
+        grid-column: 1 / 4;
+    }
+
+    .photo__box-image:nth-child(6) {
+        grid-row: 14 / 24;
+        grid-column: 4 / 7;
+    }
+
+    .photo__box-image:nth-child(7) {
+        grid-row: 24 / 30;
+        grid-column: 1 / 7;
+    }
+
+    .photo__box-image:nth-child(8) {
+        grid-row: 30 / 36;
+        grid-column: 1 / 7;
+    }
+}

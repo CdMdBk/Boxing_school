@@ -12,23 +12,29 @@
     <link rel="stylesheet" href="../styles/common/preloader.css">
     <link rel="stylesheet" href="../styles/common/nav.css">
     <link rel="stylesheet" href="../styles/landing/header.css">
+    <link rel="stylesheet" href="../styles/landing/about-us.css">
+    <link rel="stylesheet" href="../styles/landing/our-services.css">
+    <link rel="stylesheet" href="../styles/landing/our-coaches.css">
+    <link rel="stylesheet" href="../styles/landing/sign-training.css">
+    <link rel="stylesheet" href="../styles/landing/photo-album.css">
+    <link rel="stylesheet" href="../styles/landing/footer.css">
     <link rel="shortcut icon" href="../images/favicon/logo.svg" type="image/x-icon">
     <title>Школа бокса</title>
 </head>
 <body>
     <div class="preloader">
-    <ul class="preloader__container">
-        <li class="preloader__li" id="a"></li>
-        <li class="preloader__li" id="b"></li>
-        <li class="preloader__li" id="c"></li>
-        <li class="preloader__li" id="d"></li>
-        <li class="preloader__li" id="e"></li>
-        <li class="preloader__li" id="f"></li>
-        <li class="preloader__li" id="g"></li>
-        <li class="preloader__li" id="h"></li>
-        <li class="preloader__li" id="i"></li>
-    </ul>
-</div>
+        <ul class="preloader__container">
+            <li class="preloader__li" id="a"></li>
+            <li class="preloader__li" id="b"></li>
+            <li class="preloader__li" id="c"></li>
+            <li class="preloader__li" id="d"></li>
+            <li class="preloader__li" id="e"></li>
+            <li class="preloader__li" id="f"></li>
+            <li class="preloader__li" id="g"></li>
+            <li class="preloader__li" id="h"></li>
+            <li class="preloader__li" id="i"></li>
+        </ul>
+    </div>
 
     <nav class="nav">
         <div class="container">
@@ -39,10 +45,10 @@
                 <div class="col-md-6 nav__burger"><span></span></div>
                 <ul class="col-8 col-md-12 nav__ul">
                     <li class="nav__li">
-                        <a class="nav__li_font" href="#">О нас</a>
+                        <a class="nav__li_font" href="#about-us">О нас</a>
                     </li>
                     <li class="nav__li">
-                        <a class="nav__li_font" href="#">Услуги</a>
+                        <a class="nav__li_font" href="#our-services">Услуги</a>
                     </li>
                     <li class="nav__li">
                         <a class="nav__li_font" href="#">Прайс</a>
@@ -62,19 +68,134 @@
     </nav>
 
     <header class="header">
-        <div class="container header__container">
-            <h1 class="header_heading">Школа бокса №1 во всей Москве</h1>
+        <div class="container">
+            <div class="row header__container">
+                <h1 class="col-12 header_heading">Школа бокса №1 во всей Москве</h1>
 
-            <p class="header_font">Перчатки в подарок<br>на первой тренировке</p>
+                <p class="col-12 header_font">Перчатки в подарок<br>на первой тренировке</p>
 
-            <div class="header__button">
-                <button class="header__button_style" type="button">Записаться</button>
+                <div class="col-12">
+                    <button class="header_button-style" type="button">Записаться</button>
+                </div>
             </div>
         </div>
     </header>
 
+    <main>
+        <section class="container">
+            <div class="row about-us" id="about-us">
+                <div class="about-us__box">
+                    <img class="about-us__box_size" src="../images/landing/about-us/boxing.svg" alt="boxing">
+                    <p class="about-us_font">Собственные методики</p>
+                </div>
+                <div class="about-us__box">
+                    <img class="about-us__box_size" src="../images/landing/about-us/calendar.svg" alt="boxing">
+                    <p class="about-us_font">Гибкий график</p>
+                </div>
+                <div class="about-us__box">
+                    <img class="about-us__box_size" src="../images/landing/about-us/map-marker.svg" alt="boxing">
+                    <p class="about-us_font">Удобное расположение</p>
+                </div>
+                <div class="about-us__box">
+                    <img class="about-us__box_size" src="../images/landing/about-us/car.svg" alt="boxing">
+                    <p class="about-us_font">Бесплатная парковка</p>
+                </div>
+            </div>
+        </section>
+        <section class="our-services" id="our-services">
+            <div class="container">
+                <div class="row our-services__container">
+                    <h2 class="col-12 heading heading_font">Наши услуги</h2>
+                    <div class="service">
+                        <h3 class="service_heading">Индивидуальные тренировки</h3>
+                        <div class="service__text-box">
+                            <p>Разовое посещение</p>
+                            <p>1000 руб.</p>
+                        </div>
+                        <div class="service__text-box">
+                            <p>Абонимент на 8 посещений</p>
+                            <p>9000 руб.</p>
+                        </div>
+                        <div class="service__text-box">
+                            <p>Абонимент на 15 посещений</p>
+                            <p>11000 руб.</p>
+                        </div>
+                        <button class="service__button service__button_style">Записаться</button>
+                    </div>
+                    <div class="service">
+                        <h3 class="service_heading">Групповые тренировки</h3>
+                        <div class="service__text-box">
+                            <p>Разовое посещение</p>
+                            <p>1000 руб.</p>
+                        </div>
+                        <div class="service__text-box">
+                            <p>Абонимент на 8 посещений</p>
+                            <p>9000 руб.</p>
+                        </div>
+                        <div class="service__text-box">
+                            <p>Абонимент на 15 посещений</p>
+                            <p>11000 руб.</p>
+                        </div>
+                            <a class="service__button service__button_style" href="#">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container coaches">
+            <h2 class="col-12 heading heading_font">Наши тренеры</h2>
+
+            <div class="row slider">
+                <div class="col-12 slider__length">
+                    <div class="slider__card">
+                        <img class="slider__image" src="../images/landing/our-coaches/coach-1.png" alt="coaches">
+                        <div class="slider__info-box">
+                            <h4 class="slider__info-box_heading">Родионов Дмитрий</h4>
+                            <p class="slider__info-box_font">Тренер по боксу<br>Стаж: 5 лет</p>
+                        </div>
+                    </div>
+
+                    <div class="slider__card">
+                        <img class="slider__image" src="../images/landing/our-coaches/coach-2.png" alt="coaches">
+                        <div class="slider__info-box">
+                            <h4 class="slider__info-box_heading">Дашкова Елизавета</h4>
+                            <p class="slider__info-box_font">Инструктор по боксу<br>Стаж: 21 год</p>
+                        </div>
+                    </div>
+
+                    <div class="slider__card">
+                        <img class="slider__image" src="../images/landing/our-coaches/coach-3.png" alt="coaches">
+                        <div class="slider__info-box">
+                            <h4 class="slider__info-box_heading">Дмитриев Родион</h4>
+                            <p class="slider__info-box_font">Тренер по боксу<br>Стаж: 7 лет</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coaches__switches">
+                <div class="coaches__ellipse">
+                    <div class="coaches__ellipse_big"></div>
+                    <div class="coaches__ellipse_mini"></div>
+                </div>
+            </div>
+        </section>
+        <section>
+
+        </section>
+        <section>
+
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
     <script src="../scripts/common/preloader.js"></script>
     <script src="../scripts/common/burger-class.js"></script>
     <script src="../scripts/common/burger.js"></script>
+    <script src="../scripts/landing/slider-class.js"></script>
+    <script src="../scripts/landing/slider-coaches.js"></script>
 </body>
 </html>

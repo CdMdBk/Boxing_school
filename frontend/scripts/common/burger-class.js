@@ -4,9 +4,11 @@ class Navigation {
         this.activeClass = activeClass;
     }
 
-    click(burger) {
-        document.querySelector(`.${burger}`).addEventListener('click', () => {
-            this.nav.classList.toggle(this.activeClass);
+    toggleButton(button) {
+        document.querySelectorAll(`.${button}`).forEach(element => {
+            element.addEventListener('click', () => {
+                this.nav.classList.toggle(this.activeClass);
+            });
         });
     }
 
@@ -18,9 +20,5 @@ class Navigation {
         window.addEventListener('resize', () => {
             if (window.screen.width > 768) this.hide();
         })
-    }
-
-    showElements() {
-        console.log(this.nav);
     }
 }

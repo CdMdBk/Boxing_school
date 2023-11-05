@@ -55,6 +55,10 @@
 }
 
 @media (max-width: 768px) {
+    .nav__container {
+        padding: 0;
+    }
+
     .nav__logo {
         position: relative;
         z-index: 30;
@@ -141,6 +145,6 @@
 @media (max-width: 576px) {
     .nav__ul {
         align-items: flex-start;
-        padding: 0 30px;
+        padding: 0 10px;
     }
 }

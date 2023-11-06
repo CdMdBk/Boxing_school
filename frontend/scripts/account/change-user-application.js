@@ -47,11 +47,15 @@ editTab.innerHTML = `
     </form>
 `;
 
-arrayButtonsEdit.forEach((buttonEdit, index) => {
-    buttonEdit.addEventListener('click', () => {
-        account.after(editTab);
+showEditApplication();
+
+function showEditApplication() {
+    arrayButtonsEdit.forEach((buttonEdit, index) => {
+        buttonEdit.addEventListener('click', () => {
+            account.after(editTab);
+        });
     });
-});
+}
 
 function deleteEditTab() {
     editTab.remove();

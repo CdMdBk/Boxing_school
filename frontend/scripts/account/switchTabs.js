@@ -12,13 +12,18 @@ arrayNavigation.forEach((li, index) => {
 });
 
 function showTab(index) {
-    account.innerHTML = arrayAccountTabs[index];
-    if (index === 1) addUserApplication();
+    if (index === 1) {
+        addUserApplication();
+    } else {
+        account.innerHTML = arrayAccountTabs[index];
+    }
 
     arrayNavigation.forEach((element) => {
         element.classList.remove('nav__li_font_active');
     });
     arrayNavigation[index].classList.add('nav__li_font_active');
+
+    showEditApplication();
 }
 
 function showFormUserData() {

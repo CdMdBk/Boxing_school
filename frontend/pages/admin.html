@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../styles/common/initial-styles.css">
     <link rel="stylesheet" href="../styles/common/preloader.css">
     <link rel="stylesheet" href="../styles/common/nav.css">
+    <link rel="stylesheet" href="../styles/account/users/account.css">
+    <link rel="stylesheet" href="../styles/landing/sign-training.css">
     <link rel="shortcut icon" href="../images/favicon/logo.svg" type="image/x-icon">
     <title>Админ</title>
 </head>
@@ -32,7 +34,7 @@
         <div class="container">
             <div class="row nav__container">
                 <div class="col-4 col-md-6 nav__logo">
-                    <h2 class="nav_heading">Имя пользователя</h2>
+                    <h2 class="nav_heading">Админ</h2>
                 </div>
                 <div class="col-md-6 nav__burger"><span></span></div>
                 <ul class="col-8 col-md-12 nav__ul">
@@ -43,15 +45,6 @@
                         <button class="nav__li_font nav__li_font_active">Заявки</button>
                     </li>
                     <li class="nav__li">
-                        <button class="nav__li_font">Новая заявка</button>
-                    </li>
-                    <li class="nav__li">
-                        <p class="nav__li_font">Личный кабинет</p>
-                    </li>
-                    <li class="nav__li">
-                        <a class="nav__li_font" href="#footer">Контакты</a>
-                    </li>
-                    <li class="nav__li">
                         <a class="nav__li_font" href="log.html">Выход</a>
                     </li>
                 </ul>
@@ -59,8 +52,12 @@
         </div>
     </nav>
 
+    <main class="container account" data-admin data-applications-available></main>
+
     <script src="../scripts/common/preloader.js"></script>
     <script src="../scripts/common/burger-class.js"></script>
     <script src="../scripts/common/burger.js"></script>
+    <script src="../scripts/account/list-applications.js"></script>
+    <script src="../scripts/account/change-user-application.js"></script>
 </body>
 </html>

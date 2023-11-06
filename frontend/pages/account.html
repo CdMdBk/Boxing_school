@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../styles/common/preloader.css">
     <link rel="stylesheet" href="../styles/common/nav.css">
     <link rel="stylesheet" href="../styles/account/login/log.css">
-    <link rel="stylesheet" href="../styles/account/users/user-data.css">
+    <link rel="stylesheet" href="../styles/landing/sign-training.css">
+    <link rel="stylesheet" href="../styles/account/users/account.css">
     <link rel="shortcut icon" href="../images/favicon/logo.svg" type="image/x-icon">
     <title>Личный кабинет</title>
 </head>
@@ -48,7 +49,7 @@
                         <button class="nav__li_font">Новая заявка</button>
                     </li>
                     <li class="nav__li">
-                        <p class="nav__li_font" data-users="user-data">Личный кабинет</p>
+                        <p class="nav__li_font">Личный кабинет</p>
                     </li>
                     <li class="nav__li">
                         <a class="nav__li_font" href="log.html">Выход</a>
@@ -58,38 +59,13 @@
         </div>
     </nav>
 
-    <main class="account">
-<!--        <div class="row log__form">-->
-<!--            <div class="log__input-box">-->
-<!--                <h3 class="log_font">Имя</h3>-->
-<!--                <p class="log__input log__input_style">Имя</p>-->
-<!--                <h3 class="log_font">Логин</h3>-->
-<!--                <p class="log__input log__input_style">Логин</p>-->
-<!--                <h3 class="log_font">Пароль</h3>-->
-<!--                <p class="log__input log__input_style">Пароль</p>-->
-<!--                <button class="log__submit log__submit_style" type="button" onclick="showFormUserData()">Изменить-->
-<!--                </button>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <form class="row log__form" method="POST" action="#">-->
-<!--            <fieldset class="log__input-box">-->
-<!--                <label class="log_font" for="name">Имя</label>-->
-<!--                <input class="log__input log__input_style" type="text" id="name" name="name" placeholder="Имя">-->
-<!--                <label class="log_font" for="login">Логин</label>-->
-<!--                <input class="log__input log__input_style" type="text" id="login" name="login" placeholder="Логин">-->
-<!--                <label class="log_font" for="password">Пароль</label>-->
-<!--                <input class="log__input log__input_style" type="password" id="password" name="password" placeholder="Пароль">-->
-<!--                <label class="log_font" for="copy-password">Повторите пароль</label>-->
-<!--                <input class="log__input log__input_style" type="password" id="copy-password" name="password" placeholder="Повторите пароль" data-last-input>-->
-<!--                <input class="log__submit log__submit_style" type="submit" value="Сохранить">-->
-<!--            </fieldset>-->
-<!--        </form>-->
-    </main>
+    <main class="container account" data-users data-applications-available></main>
 
     <script src="../scripts/common/preloader.js"></script>
     <script src="../scripts/common/burger-class.js"></script>
     <script src="../scripts/common/burger.js"></script>
-    <script src="../scripts/account/login/switchTabs.js"></script>
+    <script src="../scripts/account/list-applications.js"></script>
+    <script src="../scripts/account/switchTabs.js"></script>
+    <script src="../scripts/account/change-user-application.js"></script>
 </body>
 </html>

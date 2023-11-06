@@ -14,6 +14,7 @@
 
 .log__form {
     width: 50%;
+    margin-bottom: 80px;
 }
 
 .log__button-box {
@@ -45,6 +46,10 @@
     padding: 40px 80px 80px 80px;
 
     background-color: #fff;
+}
+
+.log__input-box[data-users] {
+    padding: 40px 80px 0 80px;
 }
 
 .log_font {

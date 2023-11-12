@@ -1,3 +1,15 @@
+<?php
+    session_start();
+
+    if (empty($_SESSION['user_login'])) {
+        echo '
+            <h1>Время сессии закончилось, упс...</h1>
+            <p>Перейдите на <a href="index.php">начальную страницу</a> для авторизации</p>
+        ';
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,13 +51,13 @@
                 <div class="col-md-6 nav__burger"><span></span></div>
                 <ul class="col-8 col-md-12 nav__ul">
                     <li class="nav__li">
-                        <a class="nav__li_font" href="index.html">Главная</a>
+                        <a class="nav__li_font" href="index.php">Главная</a>
                     </li>
                     <li class="nav__li">
                         <button class="nav__li_font nav__li_font_active">Заявки</button>
                     </li>
                     <li class="nav__li">
-                        <a class="nav__li_font" href="log.html">Выход</a>
+                        <button class="nav__li_font" data-exit >Выход</button>
                     </li>
                 </ul>
             </div>
@@ -59,5 +71,7 @@
     <script src="../scripts/common/burger.js"></script>
     <script src="../scripts/account/list-applications.js"></script>
     <script src="../scripts/account/change-user-application.js"></script>
+
+    <script src="../requests/login/exit.js"></script>
 </body>
 </html>

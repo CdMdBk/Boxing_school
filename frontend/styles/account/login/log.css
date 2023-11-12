@@ -49,6 +49,7 @@
 }
 
 .log__input-box[data-users] {
+    width: 100%;
     padding: 40px 80px 0 80px;
 }
 

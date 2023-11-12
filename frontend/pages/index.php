@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $name = $_SESSION['user_login'];
+?>
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -50,18 +55,27 @@
                     <li class="nav__li">
                         <a class="nav__li_font" href="#coaches">Тренеры</a>
                     </li>
-                    <li class="nav__li">
-                        <a class="nav__li_font" href="#training">Записаться</a>
-                    </li>
+                    <?php if ($name) { ?>
+                        <li class="nav__li">
+                            <a class="nav__li_font" href="#training">Записаться</a>
+                        </li>
+                    <?php } ?>
                     <li class="nav__li">
                         <a class="nav__li_font" href="#photo">Фотоальбом</a>
                     </li>
                     <li class="nav__li">
                         <a class="nav__li_font" href="#footer">Контакты</a>
                     </li>
-                    <li class="nav__li">
-                        <a class="nav__li_font" href="account.html">Личный кабинет</a>
-                    </li>
+                    <?php if (empty($name)) { ?>
+                        <li class="nav__li">
+                            <a class="nav__li_font" href="log.php">Вход</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="nav__li">
+                            <a class="nav__li_font" href="account.php">Личный кабинет</a>
+                        </li>
+                    <?php } ?>
+
                 </ul>
             </div>
         </div>
@@ -75,7 +89,11 @@
                 <p class="col-12 header_font">Перчатки в подарок<br>на первой тренировке</p>
 
                 <div class="col-12">
-                    <a class="header_button-style" href="#training">Записаться</a>
+                    <?php if (empty($name)) { ?>
+                        <a class="header_button-style" href="log.php">Записаться</a>
+                    <?php } else { ?>
+                        <a class="header_button-style" href="#training">Записаться</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -121,7 +139,11 @@
                             <p>Абонимент на 15 посещений</p>
                             <p>11000 руб.</p>
                         </div>
-                        <a class="service__button service__button_style" href="#training">Записаться</a>
+                        <?php if (empty($name)) { ?>
+                            <a class="service__button service__button_style" href="log.php">Записаться</a>
+                        <?php } else { ?>
+                            <a class="service__button service__button_style" href="#training">Записаться</a>
+                        <?php } ?>
                     </div>
                     <div class="service">
                         <h3 class="service_heading">Групповые тренировки</h3>
@@ -137,7 +159,11 @@
                             <p>Абонимент на 15 посещений</p>
                             <p>11000 руб.</p>
                         </div>
+                        <?php if (empty($name)) { ?>
+                            <a class="service__button service__button_style" href="log.php">Записаться</a>
+                        <?php } else { ?>
                             <a class="service__button service__button_style" href="#training">Записаться</a>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -182,44 +208,46 @@
             </div>
         </section>
 
-        <section class="training" id="training" data-aos="flip-left">
-            <div class="container">
-                <form class="row training__container" method="POST" action="log.html">
-                    <h4 class="col-12 training_heading">Запись на тренировку</h4>
+        <?php if ($name) { ?>
+            <section class="training" id="training" data-aos="flip-left">
+                <div class="container">
+                    <form class="row training__container" method="POST" action="log.php">
+                        <h4 class="col-12 training_heading">Запись на тренировку</h4>
 
-                    <fieldset class="training__select">
-                        <select class="col-12 training__select_style" name="type">
-                            <option value="" disabled>Вид тренировки</option>
-                            <option value="individual">Индивидуальная</option>
-                            <option value="group">Групповая</option>
-                        </select>
-                        <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
-                    </fieldset>
+                        <fieldset class="training__select">
+                            <select class="col-12 training__select_style" name="type">
+                                <option value="" selected="true" disabled>Вид тренировки</option>
+                                <option value="individual">Индивидуальная</option>
+                                <option value="group">Групповая</option>
+                            </select>
+                            <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+                        </fieldset>
 
-                    <fieldset class="training__select">
-                        <select class="col-12 training__select_style" name="name">
-                            <option value="" disabled>ФИО тренера</option>
-                            <option value="rodionov">Родионов Дмитрий</option>
-                            <option value="dashkova">Дашкова Елизавета</option>
-                            <option value="dmitriev">Дмитриев Родион</option>
-                        </select>
-                        <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
-                    </fieldset>
+                        <fieldset class="training__select">
+                            <select class="col-12 training__select_style" name="name">
+                                <option value="" selected="true"  disabled>ФИО тренера</option>
+                                <option value="rodionov">Родионов Дмитрий</option>
+                                <option value="dashkova">Дашкова Елизавета</option>
+                                <option value="dmitriev">Дмитриев Родион</option>
+                            </select>
+                            <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+                        </fieldset>
 
-                    <fieldset class="training__select">
-                        <select class="col-12 training__select_style" name="time">
-                            <option value="time" disabled>Время тренировки</option>
-                            <option value="9">9:00</option>
-                            <option value="14">14:00</option>
-                            <option value="19">19:00</option>
-                        </select>
-                        <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
-                    </fieldset>
+                        <fieldset class="training__select">
+                            <select class="col-12 training__select_style" name="time">
+                                <option value="time" selected="true"  disabled>Время тренировки</option>
+                                <option value="9">9:00</option>
+                                <option value="14">14:00</option>
+                                <option value="19">19:00</option>
+                            </select>
+                            <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+                        </fieldset>
 
-                    <input class="col-12 training__submit training__submit_style" type="submit" value="Записаться">
-                </form>
-            </div>
-        </section>
+                        <input class="col-12 training__submit training__submit_style" type="submit" value="Записаться">
+                    </form>
+                </div>
+            </section>
+        <?php } ?>
 
         <section class="container photo" id="photo" data-aos="flip-left">
             <h2 class="col-12 heading heading_font">Фотоальбом</h2>

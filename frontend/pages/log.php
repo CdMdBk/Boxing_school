@@ -30,7 +30,7 @@
 
     <div class="log">
         <div class="container log__container">
-            <form class="row log__form" method="POST" action="account.html">
+            <form class="row log__form" onsubmit="userAuthorization(event)">
                 <fieldset class="log__button-box">
                     <button class="log__button log__button_style log__button_style_active" type="button">Войти</button>
                     <button class="log__button log__button_style" type="button" onclick="showRegistration();">Регистрация</button>
@@ -49,5 +49,8 @@
 
     <script src="../scripts/common/preloader.js"></script>
     <script src="../scripts/account/switchForms.js"></script>
+
+    <script src="../requests/login/registration.js"></script>
+    <script src="../requests/login/authorization.js"></script>
 </body>
 </html>

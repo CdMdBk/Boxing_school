@@ -12,6 +12,9 @@ function getApplications(user) {
     }).then(response => {
         return response.json();
     }).then(arrayData => {
+
+        console.log(arrayData);
+
         insertApplications(arrayData, user);
     });
 }
@@ -37,8 +40,6 @@ function insertApplications(arrayApplications, user) {
         </div>
     `;
     }
-
-    console.log(arrayApplications);
 
     containerApplications = '';
     for (let iterator = arrayApplications.length - 1; iterator >= 0; iterator--) {
@@ -129,9 +130,3 @@ function searchEditButtons(user) {
         });
     });
 }
-
-// function updateApplication() {
-//     document.querySelector('form.training__edit-box').addEventListener('submit', event => {
-//
-//     })
-// }

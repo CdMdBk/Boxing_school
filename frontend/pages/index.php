@@ -55,7 +55,7 @@
                     <li class="nav__li">
                         <a class="nav__li_font" href="#coaches">Тренеры</a>
                     </li>
-                    <?php if ($login) { ?>
+                    <?php if ($login && $login !== 'admin') { ?>
                         <li class="nav__li">
                             <a class="nav__li_font" href="#training">Записаться</a>
                         </li>
@@ -211,27 +211,22 @@
             </div>
         </section>
 
-        <?php if ($login) { ?>
+        <?php if ($login && $login !== 'admin') { ?>
             <section class="training" id="training" data-aos="flip-left">
                 <div class="container">
                     <form class="row training__container" method="POST" action="log.php">
                         <h4 class="col-12 training_heading">Запись на тренировку</h4>
 
                         <fieldset class="training__select">
-                            <select class="col-12 training__select_style" name="type">
+                            <select class="col-12 training__select_style" name="types">
                                 <option value="" selected="true" disabled>Вид тренировки</option>
-                                <option value="individual">Индивидуальная</option>
-                                <option value="group">Групповая</option>
                             </select>
                             <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
                         </fieldset>
 
                         <fieldset class="training__select">
-                            <select class="col-12 training__select_style" name="name">
+                            <select class="col-12 training__select_style" name="coaches">
                                 <option value="" selected="true"  disabled>ФИО тренера</option>
-                                <option value="rodionov">Родионов Дмитрий</option>
-                                <option value="dashkova">Дашкова Елизавета</option>
-                                <option value="dmitriev">Дмитриев Родион</option>
                             </select>
                             <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
                         </fieldset>
@@ -239,9 +234,6 @@
                         <fieldset class="training__select">
                             <select class="col-12 training__select_style" name="time">
                                 <option value="time" selected="true"  disabled>Время тренировки</option>
-                                <option value="9">9:00</option>
-                                <option value="14">14:00</option>
-                                <option value="19">19:00</option>
                             </select>
                             <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
                         </fieldset>
@@ -338,5 +330,8 @@
     <script src="../scripts/common/burger.js"></script>
     <script src="../scripts/landing/slider-class.js"></script>
     <script src="../scripts/landing/slider-coaches.js"></script>
+
+    <script src="../requests/applications/related-lists.js"></script>
+    <script src="../requests/applications/submit-application.js"></script>
 </body>
 </html>

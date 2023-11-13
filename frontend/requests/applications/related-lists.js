@@ -3,6 +3,7 @@ const arraySelectRelatedLists = [document.querySelector('select.training__select
     document.querySelector('select.training__select_style[name="time"]'),];
 
 let [selectType, selectCoach, selectTime] = arraySelectRelatedLists;
+console.log(selectType);
 
 fetch('../../backend/applications/types.php').then(response => {
     return response.json();

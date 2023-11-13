@@ -18,7 +18,6 @@ function showFormEditApplication(arrayData, arrayLastData) {
     selectEditStatus = '';
 
     application_id = arrayData[4];
-    console.log(application_id);
 
     //сделать функцию
     for (let i = 0; i < arrayData[0].length; i++) {
@@ -71,7 +70,7 @@ function showFormEditApplication(arrayData, arrayLastData) {
 
     //сделать функцию
     editForm.innerHTML = `
-        <h4 class="training_heading">Запись на тренировку</h4>
+        <h4 class="training_heading">Редактирование заявки</h4>
     `;
 
     editForm.innerHTML += `

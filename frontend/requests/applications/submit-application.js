@@ -18,6 +18,7 @@ document.querySelector('form.training__container').addEventListener('submit', ev
     }).then(response => {
         return response.json();
     }).then(arrayData => {
+        alert('Вы записались на тренировку');
         getApplications(arrayData.user);
     });
 })

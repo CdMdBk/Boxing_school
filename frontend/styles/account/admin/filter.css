@@ -1,0 +1,25 @@
+.filter {
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    z-index: 99;
+    transform: translate(-50%, 0);
+
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 60px 40px;
+    width: 500px;
+    height: 600px;
+
+    border: 1px solid #000;
+    background-color: #fff;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.filter_active {
+    display: flex;
+    opacity: 1;
+}

@@ -24,9 +24,16 @@ editForm.addEventListener('submit', event => {
     }).then(response => {
         return response.json();
     }).then(arrayData => {
-        document.querySelector(`#application_${arrayData[0]}`).children[1].textContent = arrayData[1];
-        document.querySelector(`#application_${arrayData[0]}`).children[2].textContent = arrayData[2];
-        document.querySelector(`#application_${arrayData[0]}`).children[3].textContent = arrayData[3];
-        document.querySelector(`#application_${arrayData[0]}`).children[4].textContent = arrayData[4];
+        if (arrayData[5]) {
+            document.querySelector(`#application_${arrayData[0]}`).children[0].textContent = arrayData[1];
+            document.querySelector(`#application_${arrayData[0]}`).children[1].textContent = arrayData[2];
+            document.querySelector(`#application_${arrayData[0]}`).children[2].textContent = arrayData[3];
+            document.querySelector(`#application_${arrayData[0]}`).children[3].textContent = arrayData[4];
+        } else {
+            document.querySelector(`#application_${arrayData[0]}`).children[1].textContent = arrayData[1];
+            document.querySelector(`#application_${arrayData[0]}`).children[2].textContent = arrayData[2];
+            document.querySelector(`#application_${arrayData[0]}`).children[3].textContent = arrayData[3];
+            document.querySelector(`#application_${arrayData[0]}`).children[4].textContent = arrayData[4];
+        }
     });
 });

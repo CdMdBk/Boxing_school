@@ -1,7 +1,7 @@
 <?php
 
 include '../connect.php';
-$add_types = $bd->query("SELECT * FROM `types`");
+$add_types = $db->query("SELECT * FROM `types`");
 
 $response = array();
 $count = 0;

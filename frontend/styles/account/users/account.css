@@ -1,21 +1,45 @@
 .account {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
 
     margin-top: 80px;
+    padding-top: 40px;
+}
+
+.account[data-users] {
+    justify-content: center;
 }
 
 .account__report {
-    align-self: flex-end;
-
-    margin-top: 40px;
+    margin-right: 30px;
 }
 
 .account__report_font {
     text-decoration: underline;
+    text-align: end;
     color: rgba(0, 0, 0, 0.69);
     background-color: initial;
+}
+
+.account__filter {
+    justify-self: flex-end;
+
+    /*width: calc(20% - 20px);*/
+}
+
+.account__filter_appearance {
+    padding: 16px 32px;
+
+    color: #fff;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.account__filter_appearance:hover {
+    color: var(--accent-color);
+    background-color: #fff;
 }
 
 .applications {

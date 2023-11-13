@@ -4,14 +4,14 @@ session_start();
 include '../connect.php';
 
 $user_login = $_SESSION['user_login'];
-$user_id = +$bd->query("SELECT `id` FROM `users` WHERE `login` = '$user_login'")->fetch_assoc()['id'];
+$user_id = +$db->query("SELECT `id` FROM `users` WHERE `login` = '$user_login'")->fetch_assoc()['id'];
 
 $response = array();
 $array_applications = '';
 if ($_SESSION['user_login'] === 'admin') {
-    $array_applications = $bd->query("SELECT * FROM `applications`");
+    $array_applications = $db->query("SELECT * FROM `applications`");
 } else {
-    $array_applications = $bd->query("SELECT `id`, `type_name`, `coach_name`, `time_name`, `status_name` FROM `applications` WHERE `user_id` = '$user_id'");
+    $array_applications = $db->query("SELECT `id`, `type_name`, `coach_name`, `time_name`, `status_name` FROM `applications` WHERE `user_id` = '$user_id'");
 }
 
 
@@ -21,7 +21,7 @@ while ($row = $array_applications->fetch_assoc()) {
 
     if ($_SESSION['user_login'] === 'admin') {
         $user_id = $row['user_id'];
-        $user_name = $bd->query("SELECT `name` FROM `users` WHERE `id` = '$user_id'")->fetch_assoc()['name'];
+        $user_name = $db->query("SELECT `name` FROM `users` WHERE `id` = '$user_id'")->fetch_assoc()['name'];
         $response[$count]['user_name'] = $user_name;
     }
 

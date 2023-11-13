@@ -8,7 +8,7 @@ $user_login = $_SESSION['user_login'];
 
 ["name" => $name, "login" => $login, "password" => $password] = $request;
 
-$bd->query("UPDATE `users` SET `name` = '$name', `login` = '$login', `password` = '$password' WHERE `login` = '$user_login'");
+$db->query("UPDATE `users` SET `name` = '$name', `login` = '$login', `password` = '$password' WHERE `login` = '$user_login'");
 
 $_SESSION['user_name'] = $name;
 $_SESSION['user_login'] = $login;

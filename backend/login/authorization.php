@@ -7,7 +7,7 @@ $request = json_decode(file_get_contents('php://input'), true);
 $login = $request['login'];
 $password = $request['password'];
 
-$add_user = $bd->query("SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
+$add_user = $db->query("SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
 
 if (!($add_user->num_rows > 0)) {
     echo json_encode(array(

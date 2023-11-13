@@ -81,42 +81,7 @@ if (empty($login)) {
         </div>
 
         <div class="training__edit">
-            <form class="training__edit-box">
-                <h4 class="training_heading">Запись на тренировку</h4>
-
-<!--                <fieldset class="training__select">-->
-<!--                    <select class="training__select_style" name="types_edit" required>-->
-<!--                        <option value="" selected="true" disabled>Тип тренировки</option>-->
-<!--                    </select>-->
-<!--                    <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">-->
-<!--                </fieldset>-->
-<!---->
-<!--                <fieldset class="training__select">-->
-<!--                    <select class="training__select_style" name="coaches_edit" required>-->
-<!--                        <option value="" selected="true" disabled>Выберите тип тренировки</option>-->
-<!--                    </select>-->
-<!--                    <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">-->
-<!--                </fieldset>-->
-<!---->
-<!--                <fieldset class="training__select">-->
-<!--                    <select class="training__select_style" name="time_edit" required>-->
-<!--                        <option value="" selected="true" disabled>Выберите тренера</option>-->
-<!--                    </select>-->
-<!--                    <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">-->
-<!--                </fieldset>-->
-<!---->
-<!--                <fieldset class="training__select">-->
-<!--                    <select class="training__select_style" name="status_edit" required>-->
-<!--                        <option value="" selected="true" disabled>Выбрать статус</option>-->
-<!--                        <option value="status_1">На рассмотрении</option>-->
-<!--                        <option value="status_2">Одобрен</option>-->
-<!--                        <option value="status_3">Отклонен</option>-->
-<!--                    </select>-->
-<!--                    <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">-->
-<!--                </fieldset>-->
-<!---->
-<!--                <input class="training__submit training__submit_style" type="submit" value="Сохранить">-->
-            </form>
+            <form class="training__edit-box"></form>
         </div>
 
         <form class="row training__container">
@@ -187,11 +152,11 @@ if (empty($login)) {
     <script src="../scripts/account/form-edit-application.js"></script>
 
     <script src="../requests/applications/functions-applications.js"></script>
-    <script src="../requests/login/user-applications.js"></script>
+    <script src="../requests/applications/user-applications.js"></script>
     <script src="../requests/login/exit.js"></script>
     <script src="../requests/login/update.js"></script>
     <script src="../requests/applications/related-lists.js"></script>
     <script src="../requests/applications/submit-application.js"></script>
-    <script src="../requests/login/update-application.js"></script>
+    <script src="../requests/applications/update-application.js"></script>
 </body>
 </html>

@@ -38,11 +38,13 @@ function insertApplications(arrayApplications, user) {
     `;
     }
 
+    console.log(arrayApplications);
+
     containerApplications = '';
     for (let iterator = arrayApplications.length - 1; iterator >= 0; iterator--) {
         if (user) {
             containerApplications += `
-                <div class="applications__row">
+                <div class="applications__row" id="application_${arrayApplications[iterator].id}">
                     <p class="applications__row_font">
                         ${arrayApplications[iterator].type_name}
                     </p>
@@ -60,7 +62,7 @@ function insertApplications(arrayApplications, user) {
             `;
         } else {
             containerApplications += `
-                <div class="applications__row">
+                <div class="applications__row" id="application_${arrayApplications[iterator].id}">
                     <p class="applications__row_font">
                         ${arrayApplications[iterator].user_name}
                     </p>
@@ -96,6 +98,7 @@ function searchEditButtons(user) {
 
             if (user) {
                 arrayDataEdit = {
+                    application_id: parseInt(event.target.parentElement.getAttribute('id').match(/\d+/)),
                     type_name: event.target.parentElement.children[0].innerHTML.trim(),
                     coach_name: event.target.parentElement.children[1].innerHTML.trim(),
                     time_name: event.target.parentElement.children[2].innerHTML.trim(),
@@ -103,6 +106,7 @@ function searchEditButtons(user) {
                 };
             } else {
                 arrayDataEdit = {
+                    application_id: parseInt(event.target.parentElement.getAttribute('id').match(/\d+/)),
                     type_name: event.target.parentElement.children[1].innerHTML.trim(),
                     coach_name: event.target.parentElement.children[2].innerHTML.trim(),
                     time_name: event.target.parentElement.children[3].innerHTML.trim(),
@@ -110,7 +114,7 @@ function searchEditButtons(user) {
                 };
             }
 
-            fetch('../../backend/applications/data-form-edit-application.php', {
+            fetch('../../backend/applications/edit-related-lists.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -119,8 +123,15 @@ function searchEditButtons(user) {
             }).then(response => {
                 return response.json();
             }).then(arrayData => {
-                showFormEditApplication(arrayData);
+                console.log(arrayData);
+                showFormEditApplication(arrayData, arrayDataEdit);
             });
         });
     });
 }
+
+// function updateApplication() {
+//     document.querySelector('form.training__edit-box').addEventListener('submit', event => {
+//
+//     })
+// }

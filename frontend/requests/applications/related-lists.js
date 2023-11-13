@@ -74,8 +74,6 @@ function getEditRelatedLists() {
 
     let [selectEditType, selectEditCoach, selectEditTime] = arraySelectEditRelatedLists;
 
-    console.log(arraySelectEditRelatedLists);
-
     selectEditType.addEventListener('change', function() {
         const type_id =  +this.value.slice(this.value.indexOf('_', this.value.length));
 
@@ -84,7 +82,7 @@ function getEditRelatedLists() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({type_id})
+            body: JSON.stringify({type_id, application_id})
         }).then(response => {
             return response.json();
         }).then(arrayData => {

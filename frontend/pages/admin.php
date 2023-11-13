@@ -65,7 +65,9 @@
     </nav>
 
     <main class="container account" data-admin data-applications-available>
-        <div class="applications">
+        <button class="account__report account__report_font">Скачать таблицу</button>
+        
+        <div class="applications" data-admin>
             <div class="applications__container" data-applications></div>
         </div>
     </main>
@@ -117,7 +119,10 @@
     <script src="../scripts/account/form-edit-application.js"></script>
 
     <script src="../requests/applications/functions-applications.js"></script>
-    <script src="../requests/login/all-applications.js"></script>
+    <script src="../requests/applications/all-applications.js"></script>
     <script src="../requests/login/exit.js"></script>
+    <script src="../requests/applications/related-lists.js"></script>
+    <script src="../requests/applications/update-application.js"></script>
+    <script src="../requests/report/report.js"></script>
 </body>
 </html>

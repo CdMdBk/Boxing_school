@@ -51,7 +51,7 @@ if (empty($login)) {
         <div class="container">
             <div class="row nav__container">
                 <div class="col-4 col-md-6 nav__logo">
-                    <h2 class="nav_heading">Имя пользователя</h2>
+                    <h2 class="nav_heading"><?=$name?></h2>
                 </div>
                 <div class="col-md-6 nav__burger"><span></span></div>
                 <ul class="col-8 col-md-12 nav__ul" data-users>
@@ -77,53 +77,68 @@ if (empty($login)) {
 
     <main class="container account" data-users data-applications-available>
         <div class="applications">
-            <div class="applications__row">
-                <h5 class="applications__row_heading">Имя</h5>
-                <h5 class="applications__row_heading">Вид</h5>
-                <h5 class="applications__row_heading">Тренер</h5>
-                <h5 class="applications__row_heading">Время</h5>
-                <h5 class="applications__row_heading">Статус</h5>
-            </div>
+            <div class="applications__container" data-applications></div>
+        </div>
 
-            <div class="applications__row">
-                <p class="applications__row_font">Имя</p>
-                <p class="applications__row_font">Вид</p>
-                <p class="applications__row_font">Тренер</p>
-                <p class="applications__row_font">Время</p>
-                <p class="applications__row_font">Статус</p>
-                <button class="applications__row_button-style">Редактировать</button>
-            </div>
+        <div class="training__edit">
+            <form class="training__edit-box">
+                <h4 class="training_heading">Запись на тренировку</h4>
 
-            <div class="applications__row">
-                <p class="applications__row_font">Имя</p>
-                <p class="applications__row_font">Вид</p>
-                <p class="applications__row_font">Тренер</p>
-                <p class="applications__row_font">Время</p>
-                <p class="applications__row_font">Статус</p>
-                <button class="applications__row_button-style">Редактировать</button>
-            </div>
+<!--                <fieldset class="training__select">-->
+<!--                    <select class="training__select_style" name="types_edit" required>-->
+<!--                        <option value="" selected="true" disabled>Тип тренировки</option>-->
+<!--                    </select>-->
+<!--                    <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">-->
+<!--                </fieldset>-->
+<!---->
+<!--                <fieldset class="training__select">-->
+<!--                    <select class="training__select_style" name="coaches_edit" required>-->
+<!--                        <option value="" selected="true" disabled>Выберите тип тренировки</option>-->
+<!--                    </select>-->
+<!--                    <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">-->
+<!--                </fieldset>-->
+<!---->
+<!--                <fieldset class="training__select">-->
+<!--                    <select class="training__select_style" name="time_edit" required>-->
+<!--                        <option value="" selected="true" disabled>Выберите тренера</option>-->
+<!--                    </select>-->
+<!--                    <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">-->
+<!--                </fieldset>-->
+<!---->
+<!--                <fieldset class="training__select">-->
+<!--                    <select class="training__select_style" name="status_edit" required>-->
+<!--                        <option value="" selected="true" disabled>Выбрать статус</option>-->
+<!--                        <option value="status_1">На рассмотрении</option>-->
+<!--                        <option value="status_2">Одобрен</option>-->
+<!--                        <option value="status_3">Отклонен</option>-->
+<!--                    </select>-->
+<!--                    <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">-->
+<!--                </fieldset>-->
+<!---->
+<!--                <input class="training__submit training__submit_style" type="submit" value="Сохранить">-->
+            </form>
         </div>
 
         <form class="row training__container">
             <h4 class="col-12 training_heading">Запись на тренировку</h4>
 
             <fieldset class="training__select">
-                <select class="col-12 training__select_style" name="types">
+                <select class="col-12 training__select_style" name="types" required>
                     <option value="" selected="true" disabled>Тип тренировки</option>
                 </select>
                 <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
             </fieldset>
 
             <fieldset class="training__select">
-                <select class="col-12 training__select_style" name="coaches">
+                <select class="col-12 training__select_style" name="coaches" required>
                     <option value="" selected="true" disabled>Выберите тип тренировки</option>
                 </select>
                 <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
             </fieldset>
 
             <fieldset class="training__select">
-                <select class="col-12 training__select_style" name="time">
-                    <option value="time" selected="true" disabled>Выберите тренера</option>
+                <select class="col-12 training__select_style" name="time" required>
+                    <option value="" selected="true" disabled>Выберите тренера</option>
                 </select>
                 <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
             </fieldset>
@@ -169,9 +184,14 @@ if (empty($login)) {
     <script src="../scripts/account/list-applications.js"></script>
     <script src="../scripts/account/switchTabs.js"></script>
     <script src="../scripts/account/change-user-application.js"></script>
+    <script src="../scripts/account/form-edit-application.js"></script>
 
+    <script src="../requests/applications/functions-applications.js"></script>
+    <script src="../requests/login/user-applications.js"></script>
     <script src="../requests/login/exit.js"></script>
     <script src="../requests/login/update.js"></script>
     <script src="../requests/applications/related-lists.js"></script>
+    <script src="../requests/applications/submit-application.js"></script>
+    <script src="../requests/login/update-application.js"></script>
 </body>
 </html>

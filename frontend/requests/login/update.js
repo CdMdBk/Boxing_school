@@ -19,5 +19,6 @@ function requestUpdateUserData(form) {
         document.querySelectorAll('p.log__input').forEach((element, index) => {
             element.textContent = arrayData[index];
         });
+        document.querySelector('.nav_heading').textContent = arrayData[0];
     });
 }

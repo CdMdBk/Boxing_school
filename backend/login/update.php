@@ -6,9 +6,7 @@ $request = json_decode(file_get_contents('php://input'), true);
 
 $user_login = $_SESSION['user_login'];
 
-$name = $request['name'];
-$login = $request['login'];
-$password = $request['password'];
+["name" => $name, "login" => $login, "password" => $password] = $request;
 
 $bd->query("UPDATE `users` SET `name` = '$name', `login` = '$login', `password` = '$password' WHERE `login` = '$user_login'");
 

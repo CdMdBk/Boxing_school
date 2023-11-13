@@ -64,14 +64,60 @@
         </div>
     </nav>
 
-    <main class="container account" data-admin data-applications-available></main>
+    <main class="container account" data-admin data-applications-available>
+        <div class="applications">
+            <div class="applications__container" data-applications></div>
+        </div>
+    </main>
+
+    <div class="training__edit">
+        <form class="training__edit-box">
+            <h4 class="training_heading">Запись на тренировку</h4>
+
+            <fieldset class="training__select">
+                <select class="training__select_style" name="types" required>
+                    <option value="" selected="true" disabled>Тип тренировки</option>
+                </select>
+                <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+            </fieldset>
+
+            <fieldset class="training__select">
+                <select class="training__select_style" name="coaches" required>
+                    <option value="" selected="true" disabled>Выберите тип тренировки</option>
+                </select>
+                <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+            </fieldset>
+
+            <fieldset class="training__select">
+                <select class="training__select_style" name="time" required>
+                    <option value="" selected="true" disabled>Выберите тренера</option>
+                </select>
+                <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+            </fieldset>
+
+            <fieldset class="training__select">
+                <select class="training__select_style" name="status" required>
+                    <option value="" selected="true" disabled>Выбрать статус</option>
+                    <option value="status_1">На рассмотрении</option>
+                    <option value="status_2">Одобрен</option>
+                    <option value="status_3">Отклонен</option>
+                </select>
+                <img class="training__select_arrow" src="../images/general/arrow.svg" alt="arrow">
+            </fieldset>
+
+            <input class="training__submit training__submit_style" type="submit" value="Сохранить">
+        </form>
+    </div>
 
     <script src="../scripts/common/preloader.js"></script>
     <script src="../scripts/common/burger-class.js"></script>
     <script src="../scripts/common/burger.js"></script>
     <script src="../scripts/account/list-applications.js"></script>
     <script src="../scripts/account/change-user-application.js"></script>
+    <script src="../scripts/account/form-edit-application.js"></script>
 
+    <script src="../requests/applications/functions-applications.js"></script>
+    <script src="../requests/login/all-applications.js"></script>
     <script src="../requests/login/exit.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $name = $_SESSION['user_login'];
+    $login = $_SESSION['user_login'];
 ?>
 
 <!doctype html>
@@ -55,7 +55,7 @@
                     <li class="nav__li">
                         <a class="nav__li_font" href="#coaches">Тренеры</a>
                     </li>
-                    <?php if ($name) { ?>
+                    <?php if ($login) { ?>
                         <li class="nav__li">
                             <a class="nav__li_font" href="#training">Записаться</a>
                         </li>
@@ -66,16 +66,19 @@
                     <li class="nav__li">
                         <a class="nav__li_font" href="#footer">Контакты</a>
                     </li>
-                    <?php if (empty($name)) { ?>
+                    <?php if (empty($login)) { ?>
                         <li class="nav__li">
                             <a class="nav__li_font" href="log.php">Вход</a>
                         </li>
-                    <?php } else { ?>
+                    <?php } elseif ($login === 'admin') { ?>
                         <li class="nav__li">
-                            <a class="nav__li_font" href="account.php">Личный кабинет</a>
+                            <a class="nav__li_font" href="admin.php">Панель Админа</a>
                         </li>
+                    <?php } else { ?>
+                    <li class="nav__li">
+                        <a class="nav__li_font" href="account.php">Личный кабинет</a>
+                    </li>
                     <?php } ?>
-
                 </ul>
             </div>
         </div>
@@ -89,7 +92,7 @@
                 <p class="col-12 header_font">Перчатки в подарок<br>на первой тренировке</p>
 
                 <div class="col-12">
-                    <?php if (empty($name)) { ?>
+                    <?php if (empty($login)) { ?>
                         <a class="header_button-style" href="log.php">Записаться</a>
                     <?php } else { ?>
                         <a class="header_button-style" href="#training">Записаться</a>
@@ -139,7 +142,7 @@
                             <p>Абонимент на 15 посещений</p>
                             <p>11000 руб.</p>
                         </div>
-                        <?php if (empty($name)) { ?>
+                        <?php if (empty($login)) { ?>
                             <a class="service__button service__button_style" href="log.php">Записаться</a>
                         <?php } else { ?>
                             <a class="service__button service__button_style" href="#training">Записаться</a>
@@ -159,7 +162,7 @@
                             <p>Абонимент на 15 посещений</p>
                             <p>11000 руб.</p>
                         </div>
-                        <?php if (empty($name)) { ?>
+                        <?php if (empty($login)) { ?>
                             <a class="service__button service__button_style" href="log.php">Записаться</a>
                         <?php } else { ?>
                             <a class="service__button service__button_style" href="#training">Записаться</a>
@@ -208,7 +211,7 @@
             </div>
         </section>
 
-        <?php if ($name) { ?>
+        <?php if ($login) { ?>
             <section class="training" id="training" data-aos="flip-left">
                 <div class="container">
                     <form class="row training__container" method="POST" action="log.php">

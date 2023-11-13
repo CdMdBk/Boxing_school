@@ -4,6 +4,35 @@
     background: url('../../images/landing/sign-training/bg.png') no-repeat center / cover;
 }
 
+.training__edit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+
+    background-color: rgba(0, 0, 0, 0.56);
+}
+
+.training__edit-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 60px 40px;
+    width: 40%;
+    height: 700px;
+
+    background-color: #fff;
+}
+
 .training__container {
     display: flex;
     flex-wrap: wrap;
